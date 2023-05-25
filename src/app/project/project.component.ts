@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { Project } from '../model/project';
+import { ProjectService } from '../projects/project.service';
 
 @Component({
   selector: 'app-project',
@@ -11,37 +12,13 @@ export class ProjectComponent implements OnInit, OnChanges {
   @Input() name: String = "";
   @Output() liked = new EventEmitter<Boolean>();
 
-  projects: Array<Project> = [
-    {
-      id: 1,
-      name: 'SSApp',
-      type: 'Android',
-      description: 'Application for snooker'
-    },
-    {
-      id: 2,
-      name: 'Jaspe',
-      type: 'Android',
-      description: 'Application for e-commerce'
-    },
-    {
-      id: 3,
-      name: 'SleepTight',
-      type: 'Android',
-      description: 'Application for baby development'
-    },
-    {
-      id: 4,
-      name: 'XRoad',
-      type: 'Android',
-      description: 'Application personal code improvement'
-    },
-  ]
+  projects: Project[] = [];
 
-  constructor() { }
+  constructor(private projectService: ProjectService) {
+  }
 
   ngOnInit(): void {
-
+    this.projects = this.projectService.getProjects()
   }
 
   ngOnChanges(changes: SimpleChanges) {
