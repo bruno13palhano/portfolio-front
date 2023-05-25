@@ -1,0 +1,15 @@
+<p *ngIf="name === 'SleepTight App'; else noName">{{name}} project works!</p>
+<button (click)="liked.emit(true)">Like</button>
+
+<ng-template #noName>
+  <p>Wrong Project</p>
+</ng-template>
+
+
+<ul>
+  <li *ngFor="let project of projects | sort: 'description'; index as projectIndex">
+      {{project.id}}. {{project.name}}
+  </li>
+</ul>
+
+<p appCopyright></p>
