@@ -1,33 +1,27 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Project } from '../../model/project';
-import { ProjectService } from '../project.service';
+import { ProjectDetailService } from './project-detail.service';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.css']
+  styleUrls: ['./project.component.css'],
+  providers: [ProjectDetailService]
 })
-export class ProjectComponent implements OnInit, OnChanges {
+export class ProjectComponent implements OnInit {
 
-  @Input() name: String = "";
-  @Output() liked = new EventEmitter<Boolean>();
+  project: Project = {
+    id: 0,
+    name: "",
+    type: "",
+    description: ""
+  }
+  @Input() projectId: number = 0;
 
-  projects: Project[] = [];
-
-  constructor(private projectService: ProjectService) {
+  constructor(private projectDetailService: ProjectDetailService) {
   }
 
   ngOnInit(): void {
-    this.projects = this.projectService.getProjects()
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    const name = changes['name'];
-    const oldValue = name.previousValue;
-    const newValue = name.currentValue;
-
-    if (!name.isFirstChange()) {
-      console.log(`project name changed from ${oldValue} to ${newValue}`);
-    }
+    this.project = this.projectDetailService.getProjectById(this.projectId)
   }
 }
