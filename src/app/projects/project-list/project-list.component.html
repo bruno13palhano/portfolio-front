@@ -1,1 +1,7 @@
-<p>project-list works!</p>
+<h3>project-list works!</h3>
+<ul>
+  <li *ngFor="let project of projects">
+      <app-project [projectId]="project.id"></app-project>
+  </li>
+</ul>
+<app-favorite-projects></app-favorite-projects>
