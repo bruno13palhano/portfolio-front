@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { FavoriteProjectsComponent } from './favorite-projects/favorite-projects.component';
 import { ProjectComponent } from './project/project.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +12,8 @@ import { ProjectComponent } from './project/project.component';
     ProjectComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     ProjectListComponent
