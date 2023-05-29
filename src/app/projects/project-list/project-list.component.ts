@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
-import { Project } from 'src/app/model/project';
+import { Project } from 'src/app/projects/project';
 
 @Component({
   selector: 'app-project-list',
@@ -8,14 +8,23 @@ import { Project } from 'src/app/model/project';
   styleUrls: ['./project-list.component.css'],
   providers: [ProjectService]
 })
-export class ProjectListComponent implements OnInit {
+export class ProjectListComponent implements OnInit, OnDestroy {
 
   projects: Project[] = [];
 
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
-    this.projects = this.projectService.getProjects()
+    this.getProjects()
+    console.log(this.projects);
   }
 
+  getProjects() {
+    this.projectService.getProjects()
+      .subscribe(projects => this.projects = projects)
+  }
+
+  ngOnDestroy(): void {
+
+  }
 }

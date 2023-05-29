@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
-import { Project } from 'src/app/model/project';
+import { Project } from 'src/app/projects/project';
 
 @Component({
   selector: 'app-favorite-projects',
@@ -14,7 +14,10 @@ export class FavoriteProjectsComponent implements OnInit {
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
-    this.projects = this.projectService.getProjects()
+    this.getProjects();
   }
 
+  getProjects() {
+    this.projectService.getProjects().subscribe(projects => this.projects = projects);
+  }
 }
