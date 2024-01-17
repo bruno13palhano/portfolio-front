@@ -3,7 +3,7 @@ import { Project } from './project';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const projectUrl = 'http://localhost:8080/project/';
+const projectUrl = 'http://localhost:8080/projects/';
 
 @Injectable({
   providedIn: 'root'
