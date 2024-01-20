@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { SortPipe } from './sort.pipe';
 import { CopyrightDirective } from './copyright.directive';
 import { ProjectsModule } from './projects/projects.module';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ProfileComponent } from './profile/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SortPipe,
-    CopyrightDirective
+    CopyrightDirective,
+    PortfolioComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
