@@ -5,19 +5,19 @@ import { AppComponent } from './app.component';
 import { SortPipe } from './sort.pipe';
 import { CopyrightDirective } from './copyright.directive';
 import { ProjectsModule } from './projects/projects.module';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileModule } from './profile/profile.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     SortPipe,
-    CopyrightDirective,
-    ProfileComponent
+    CopyrightDirective
   ],
   imports: [
     BrowserModule,
     ProjectsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]
