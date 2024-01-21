@@ -20,14 +20,12 @@ export class ProfileComponent implements OnInit {
 
   constructor(private profileService: ProfileService) { }
 
-  profileId: number = 1;
-
   ngOnInit(): void {
-    this.getProfileById(this.profileId);
+    this.getProfile();
   }
 
-  getProfileById(id: number) {
-    this.profileService.getProfile(id).subscribe( profile => {
+  getProfile() {
+    this.profileService.getProfile().subscribe( profile => {
         console.log(profile);
         return this.profile = profile
       }
