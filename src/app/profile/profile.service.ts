@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Profile } from '../model/profile';
 
-const profileUrl = 'http://localhost:8080/profile';
+const profileUrl = 'http://localhost:8080/profiles';
 
 @Injectable({
   providedIn: 'root'
