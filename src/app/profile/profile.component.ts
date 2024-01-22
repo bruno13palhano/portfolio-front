@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
   profile: Profile = {
     id: 0,
     name: "",
+    imageUrl: "",
     description: "",
     email: "",
     cellphoneNumber: "",
