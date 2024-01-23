@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Profile } from '../model/profile';
+import { Profile } from './profile';
 
 const profileUrl = 'http://localhost:8080/profiles';
 
