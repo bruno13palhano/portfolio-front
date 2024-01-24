@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: xx-large;
+}
+
+.subtitle {
+    font-size: x-large;
+}
+
+.description {
+    font-size: large;
+}
