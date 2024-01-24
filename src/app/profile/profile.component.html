@@ -1,8 +1,12 @@
 <div class="container">
-    <p>Profile name: {{profile.name}}</p>
-    <img src={{profile.imageUrl}} width="280">
-    <p>Profile description: {{profile.description}}</p>
-    <p>Profile email: {{profile.email}}</p>
-    <p>Profile cellphone number: {{profile.cellphoneNumber}}</p>
-    <p>Profile social media: {{profile.socialMedia}}</p>
+    <div>
+        <p class="title">Profile name: {{profile.name}}</p>
+        <p class="description">Profile description: {{profile.description}}</p>
+        <p class="subtitle">Profile email: {{profile.email}}</p>
+        <p class="subtitle">Profile cellphone number: {{profile.cellphoneNumber}}</p>
+        <p class="subtitle">Profile social media: {{profile.socialMedia}}</p>
+    </div>
+    <div>
+        <img src={{profile.imageUrl}} width="280">
+    </div>
 </div>
