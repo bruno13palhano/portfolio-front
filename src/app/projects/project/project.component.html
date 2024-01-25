@@ -1,11 +1,10 @@
 <div class="container">
-    <p>Project id: {{project.id}}</p>
     <p>Project name: {{project.name}}</p>
     <div class="image-container">
         <div *ngFor="let imageUrl of project.imagesUrls">
             <img src={{imageUrl}} width="400">
         </div>
     </div>
-    <p>Project type: {{project.type}}</p>
-    <p>Project description {{project.description}}</p>
+    <p>Type: {{project.type}}</p>
+    <p>Description: {{project.description}}</p>
 </div>
